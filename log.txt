@@ -1,0 +1,45 @@
+Hibernate: drop table if exists students cascade
+Hibernate: create table students (age integer, id bigint not null, fName varchar(255), primary key (id))
+апр. 03, 2024 9:06:19 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@25f61c2c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+апр. 03, 2024 9:06:19 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@73fbdf68] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+
+
+Найденный студент:
+Hibernate: select s1_0.id,s1_0.age,s1_0.fName from students s1_0 where s1_0.id=?
+Student(id=1, firstName=Student 1, age=17)
+Hibernate: insert into students (age,fName,id) values (?,?,?)
+
+
+Найденный студент:
+Hibernate: select s1_0.id,s1_0.age,s1_0.fName from students s1_0 where s1_0.id=?
+Student(id=11, firstName=Student 11, age=22)
+Hibernate: update students set age=?,fName=? where id=?
+
+
+Найденный студент:
+Hibernate: select s1_0.id,s1_0.age,s1_0.fName from students s1_0 where s1_0.id=?
+Student(id=11, firstName=Merged Student 11, age=22)
+Hibernate: select null,s1_0.age,s1_0.fName from students s1_0 where s1_0.id=?
+Hibernate: delete from students where id=?
+Hibernate: select s1_0.id,s1_0.age,s1_0.fName from students s1_0
+Результат удаления:
+[Student(id=1, firstName=Student 1, age=17), Student(id=2, firstName=Student 2, age=18), Student(id=3, firstName=Student 3, age=19), Student(id=4, firstName=Student 4, age=20), Student(id=5, firstName=Student 5, age=21), Student(id=6, firstName=Student 6, age=22), Student(id=7, firstName=Student 7, age=23), Student(id=8, firstName=Student 8, age=24), Student(id=9, firstName=Student 9, age=25), Student(id=10, firstName=Student 10, age=26)]
+Hibernate: select s1_0.id,s1_0.age,s1_0.fName from students s1_0 where s1_0.age>?
+Студенты которым больше 20:
+[Student(id=5, firstName=Student 5, age=21), Student(id=6, firstName=Student 6, age=22), Student(id=7, firstName=Student 7, age=23), Student(id=8, firstName=Student 8, age=24), Student(id=9, firstName=Student 9, age=25), Student(id=10, firstName=Student 10, age=26)]
+апр. 03, 2024 9:06:20 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+
+Process finished with exit code 0
